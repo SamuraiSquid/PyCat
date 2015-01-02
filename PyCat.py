@@ -18,9 +18,9 @@ print('Loading Member Library')
 f = open('numbers.list')#Open list of numbers to send the facts to
 numbers = f.readlines()#Read the numbers into a list
 f.close()
-numofnums = len(numbers)#Get the number of numbers that will recieve CatFacts
+numofnums = len(numbers)#Get the number of numbers that will recieve cat facts
 
-print('Member Library Loaded - ' + str(numofnums) + ' Users Total')#Print the number of numbers that will revieve CatFacts
+print('Member Library Loaded - ' + str(numofnums) + ' Users Total')#Print the number of numbers that will revieve cat facts
 
 print('---------------------------')
 
@@ -34,7 +34,7 @@ while True:
     while True:#Loop through list of recipient numbers until the last number is sent it's fact
         number = numbers[userid]#set number to the recipient's number
         userid = userid + 1 #Move up on the list of numbers
-        f = urllib2.urlopen('http://catfacts-api.appspot.com/api/facts')#Fetch the JSON response from the CatFacts API
+        f = urllib2.urlopen('http://catfacts-api.appspot.com/api/facts')#Fetch the JSON response from the Cat Facts API
         json_string = f.read()#Read the fact from the API
         parsed_json = json.loads(json_string)#Parse the JSON response
         fact = parsed_json["facts"][0]#Extract the fact from the JSON response
